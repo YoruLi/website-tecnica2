@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Telegraf";
+    src: url(/fonts/telegraf-regular.woff2) format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Telegraf";
+    src: url(/fonts/telegraf-medium.woff2) format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Telegraf";
+    src: url(/fonts/telegraf-semibold.woff2) format("woff2");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Telegraf";
+    src: url(/fonts/telegraf-bold.woff2) format("woff2");
+    font-weight: 700;
+}
+
+.links:hover::after {
+    content: "";
+    /* after:h-[2px] after:left-0 after:right-0 after:bg-black after:bottom-0  after:absolute */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.2rem;
+    background-color: #000;
+    animation: activeLinkIn 0.7s ease-out;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.2rem;
+    background-color: #000;
+    animation: activeLinkIn 0.7s ease-out;
+}
+
+@keyframes activeLinkIn {
+    0% {
+        width: 0%;
+        background-color: #03a9f4;
+    }
+
+    66% {
+        background-color: #2b90bf;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

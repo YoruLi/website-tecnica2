@@ -1,0 +1,45 @@
+---
+import { logo, openMenu } from "../../data/svgs";
+import Menu from "./Menu.astro";
+import Navbar from "./Navbar.astro";
+import Svg from "./Svg.astro";
+---
+<header class="fixed flex w-full items-center justify-between fon py-6 z-[2]  transition-colors duration-700 px-4 md:justify-around ">
+    <div>
+        <a href="/">
+            <Svg
+            viewBox={logo.viewBox}
+            path={logo.path}
+            className="h-8 w-8"
+            />
+            </a>
+    </div>
+
+       <button data-open-menu aria-label="Abrir Menu" class="md:hidden ">
+         <Svg
+            viewBox={openMenu.viewBox}
+            path={openMenu.path}
+            className="h-8 w-8"
+            />
+       </button>
+
+     
+          
+   <div class="hidden md:block">
+    <Navbar/>
+   </div>
+</header>
+
+
+
+<script>
+    function isAlt() {
+        const header = document.querySelector('header')
+        if (window.scrollY !== 0) {
+            header.style.background = "rgb(241 245 249)"
+        } else {
+            header.style.background = "transparent"
+        }
+    }
+    window.addEventListener("scroll", isAlt)
+</script>

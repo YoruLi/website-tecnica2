@@ -1,0 +1,21 @@
+---
+
+interface SectionProps { 
+id: string,
+title: string,
+}
+const {id, title} = Astro.props as SectionProps
+
+---
+
+      <div class="load-container fixed z-30 inset-0 w-full h-screen overflow-hidden pointer-events-none">
+        <div class="loading-screen absolute bg-yellow-500 w-[0%] -right-full h-full">
+         <div class="top-1/2 left-[45%] absolute md:top-[70%] md:left-2/3" id="textPageSection">
+          <h2 class="text-5xl md:text-8xl text-black">{title}</h2>
+         </div>
+        </div>
+      </div>
+      <section id={id} class="flex flex-col w-full min-h-screen gap-8 md:px-28 px-5 py-32">
+          <slot/>
+      </section>
+  

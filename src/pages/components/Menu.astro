@@ -1,0 +1,27 @@
+---
+import { closeMenu } from "../../data/svgs";
+import Navbar from "./Navbar.astro";
+import Svg from "./Svg.astro";
+---
+<aside data-menu class="fixed inset-0 z-[3] bg-transparent opacity-1 text-black md:hidden">
+       <div id="secondBg" class="absolute inset-0 bg-slate-300 -z-[2]"></div>
+      <div id="navRef" class="bg-slate-200  absolute inset-0 flex flex-col justify-center items-center gap-10">
+        <button data-close-menu>
+            <Svg
+            viewBox={closeMenu.viewBox}
+            path={closeMenu.path}
+            className="h-11 w-11 fill-slate-700"
+            />
+        </button>
+    
+    <Navbar/>
+      </div>
+</aside>
+
+
+<script>
+     
+  
+
+    
+</script>

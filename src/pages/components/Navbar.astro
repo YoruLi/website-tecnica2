@@ -1,0 +1,39 @@
+---
+import { navigation } from "../../data/navigation";
+---
+<nav data-nav>   
+    <ul class="flex flex-col  items-center gap-20 md:flex-row">
+        {
+            navigation.map(({section, children}) => (
+                <li class="" >
+                    <button data-navbar-el data-section-id={section} class="relative"  >
+                        <a  href={`/${section}`} class="links text-xl font-medium ">{children}</a>
+                    </button>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
+
+
+<script>
+
+const links = document.querySelectorAll('.links')
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    const isActive = link.classList.contains("active");
+
+    links.forEach((otherLink) => {
+      otherLink.classList.remove("active");
+    });
+
+    if (!isActive) {
+      link.classList.add("active");
+    }
+  });
+
+
+});
+
+</script>

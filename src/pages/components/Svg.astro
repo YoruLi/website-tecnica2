@@ -1,0 +1,19 @@
+---
+interface SvgProps {
+    viewBox: string,
+    path: string,
+    fill: string,
+    className: string
+}
+const {viewBox, path, fill, className} = Astro.props as SvgProps
+---
+
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    fill={fill} 
+    viewBox={viewBox}
+    class={className}
+ 
+>
+<path d={path}  />
+</svg>

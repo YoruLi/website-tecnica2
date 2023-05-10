@@ -1,0 +1,63 @@
+---
+import { hero } from "../../data/hero";
+import Section from "../components/Section.astro"
+---
+
+<Section id="home" title="Home">
+  <!-- <div class="fixed hidden justify-center items-center h-full w-full left-0 top-0 text-white bg-black z-40" animate-hero-container>
+    <div class="text-5xl uppercase font-semibold"  >
+     <div animate-hero-text>
+      <span>Bienvenido a la</span>
+     </div>
+    <div animate-hero-text>
+      <h2>{hero.title}</h2>
+    </div>
+  </div>
+    </div> -->
+    <div class="grid md:grid-cols-2 my-auto place-content-center place-items-center gap-6 overflow-hidden">
+   
+      <div animate-text animate-text-section class="py-12" >
+        <h1 class="text-3xl md:text-4xl font-telegraf font-bold leading-tight -tracking-tighter  " >{hero.title}</h1>
+        <p class="  text-lg md:text-2xl font-medium mt-10">
+          ¡Bienvenidos a nuestra página web de la escuela!
+          Aquí encontrarás una educación de calidad, un equipo docente comprometido y un ambiente acogedor. Descubre nuestras instalaciones modernas y valores de inclusión. ¡Explora y descubre todo lo que nuestra escuela tiene para ofrecer!
+        </p>
+      </div>
+        <div class=" relative overflow-hidden w-full  h-[37vh] md:h-[50vh] max-h-[500px]" animate-image-section animate-image>
+            <img 
+            src="/escuela.jpg" 
+            alt="edificio de la escuela de educacion tecnica N2"
+            class=" absolute w-full  h-[120%] -bottom-20 object-cover "
+            >
+        </div>
+    </div>
+</Section>
+
+<Section id="home" title="Home">
+  <div class=" min-h-screen font-telegraf md:text-white w-full md:w-2/3 ">
+   <div class="  ">
+    <div class="md:bg-purple-500 flex items-center justify-center flex-col w-full h-full  md:py-12 md:px-32 ">
+      <header class="">
+        <h2 class="relative text-4xl font-semibold py-16 after:bottom-0 after:right-0 after:left-0 after:absolute  after:h-[0.02rem] after:bg-black md:after:bg-white after:opacity-30">
+          Historia de la Institución E.E.S.T. N°2 "Rodolfo Walsh"
+        </h2>
+        </header>
+    <div class=" text-xl md:text-2xl leading-relaxed font-medium flex flex-col w-full h-full  py-12 md:py-20  ">
+    <p>
+      Los inicios de la Técnica se remontan al año 1975 y es creada como alternativa de educación de rápida salida laboral para jóvenes que no podían o no querían seguir los estudios secundarios, se la conocía como “Escuela Profesional N°1”. Al no contar con un edificio propio las clases eran dictadas en las aulas de la Biblioteca Popular Sarmiento...
+    </p>
+    <p>
+      Los oficios que se dictaban en ese entonces eran: Radio y Televisión, Electricidad, Corte y Confección del Vestido y Auxiliar de Administración, con una duración de dos o tres años dependiendo del oficio elegido.
+      Con el paso del tiempo y ante una demanda de la comunidad de que hubiera en el distrito otra escuela técnica, dicha institución se redefinió y paso a ser la Escuela de Educación Técnica N°2.
+    </p>
+     </div> 
+     <div class="relative overflow-hidden h-[37vh] md:h-[50vh] w-full max-h-[600px]  md:left-[40%]   ">
+      <img src="/tec2.jpeg" alt="Edificio de la escuela tecnica 2" class="md:absolute bottom-0  left-0 block object-cover  h-[110%]     ">
+    </div>
+    
+   </div>
+ 
+  </div>
+
+</Section>
+

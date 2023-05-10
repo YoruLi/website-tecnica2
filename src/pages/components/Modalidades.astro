@@ -1,0 +1,88 @@
+---
+import { svgChemical, svgConstruction, svgConstructionsHat, svgPC, svgPhp, svgTube, svgVisualStudioCode } from "../../data/svgs";
+import Svg from "./Svg.astro";
+---
+
+<div class="absolute inset-0">
+    <div id="icons" class="relative h-full [&>Svg]:w-14 [&>Svg]:h-14 [&>Svg]:opacity-0 [&>Svg]:absolute">       
+        <Svg 
+        viewBox={svgVisualStudioCode.viewBox}
+        path={svgVisualStudioCode.path}
+        fill='#09f'
+        
+        />
+        <Svg 
+        viewBox={svgChemical.viewBox}
+        path={svgChemical.path}
+        fill='#09f'
+        />
+        <Svg 
+        viewBox={svgConstruction.viewBox}
+        path={svgConstruction.path}
+        fill='#09f'
+        />
+
+        <Svg 
+        viewBox={svgPhp.viewBox}
+        path={svgPhp.path}
+        fill='#09f'
+        />
+        <Svg 
+        viewBox={svgTube.viewBox}
+        path={svgTube.path}
+        fill='#09f'
+        />
+
+        <Svg 
+        viewBox={svgConstructionsHat.viewBox}
+        path={svgConstructionsHat.path}
+        fill='#09f'
+        />
+        <Svg 
+        viewBox={svgPC.viewBox}
+        path={svgPC.path}
+        fill='#09f'
+    
+        />
+       
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    
+    const hero = document.querySelector("#icons")
+    const svgs = Array.from(hero.querySelectorAll("Svg"))
+    
+    function animateBackgroundIcons () {
+	const availableSvgs = svgs.filter((svg) => !svg.classList.contains("animate-moving-background"))
+	const svgToAnimate = availableSvgs[Math.floor(Math.random() * availableSvgs.length)]
+
+    if (!svgToAnimate) return
+
+
+    svgToAnimate.addEventListener("animationend", ()=>{
+        svgToAnimate.classList.remove("animate-moving-background")
+        svgToAnimate.removeAttribute("style")
+    } , 	{ once: true })
+
+
+    svgToAnimate.setAttribute(
+        `style`,
+        `top: ${Math.floor(Math.random() * window.innerHeight)}px;
+         left: ${Math.floor(Math.random() * window.innerWidth)}px;
+        `
+    )
+    svgToAnimate.classList.add("animate-moving-background")
+
+ 
+}
+
+setInterval(animateBackgroundIcons, 1000)
+animateBackgroundIcons()
+
+</script>
