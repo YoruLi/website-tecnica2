@@ -1,7 +1,5 @@
 import { Power3, gsap } from "gsap";
 import barba from "@barba/core";
-import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
-import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 
 const $ = selector => document.querySelector(selector);
 const secondBg = $("#secondBg");
@@ -178,31 +176,3 @@ function heroLoadAnimation() {
         duration: 1,
     });
 }
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-const smoother = ScrollSmoother.create({
-    content: "#content",
-    smooth: 1.5,
-    effects: true,
-});
-
-smoother.effects("img", { speed: "auto" });
-
-function heroAnimation() {
-    const heroScroller = gsap
-        .timeline({
-            paused: true,
-            scrollTrigger: {
-                trigger: "#content",
-                toggleActions: "play none none reverse",
-                pin: true,
-                scrub: true,
-            },
-        })
-        .to("#content", { opacity: 0, stagger: 0.2 });
-
-    return heroScroller;
-}
-window.addEventListener("DOMContentLoaded", () => {
-    heroAnimation();
-});
