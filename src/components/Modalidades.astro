@@ -3,8 +3,8 @@ import { svgChemical, svgConstruction, svgConstructionsHat, svgPC, svgPhp, svgTu
 import Svg from "./Svg.astro";
 ---
 
-<div class="absolute inset-0">
-    <div id="icons" class="relative h-full [&>Svg]:w-14 [&>Svg]:h-14 [&>Svg]:opacity-0 [&>Svg]:absolute">       
+<div class="absolute inset-0 z-[-1] ">
+    <div id="icons" class="relative h-full   [&>Svg]:p-4 [&>Svg]:w-24 [&>Svg]:h-24 [&>Svg]:opacity-0 [&>Svg]:absolute">       
         <Svg 
         viewBox={svgVisualStudioCode.viewBox}
         path={svgVisualStudioCode.path}
